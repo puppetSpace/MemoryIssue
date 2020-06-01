@@ -5,17 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="MyDatabase.mdf" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="MyDatabase.mdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="System.Data.SqlClient" Version="4.8.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Code\" />
   </ItemGroup>
 
 

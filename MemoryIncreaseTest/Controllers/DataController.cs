@@ -1,5 +1,4 @@
-﻿using MemoryIncreaseTest.Code;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,18 +12,10 @@ namespace MemoryIncreaseTest.Controllers
     [ApiController]
     public class DataController : ControllerBase
     {
-		private readonly DbProxy _dbProxy;
-
-		public DataController(DbProxy dbProxy)
-		{
-			_dbProxy = dbProxy;
-		}
-        
         public async Task<IActionResult> Post()
 		{
             using var ms = new MemoryStream();
             await Request.Body.CopyToAsync(ms);
-            //await _dbProxy.Insert(ms.ToArray());
             await Task.Delay(500);
             return NoContent();
 		}
